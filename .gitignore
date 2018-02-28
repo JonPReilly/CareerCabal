@@ -84,6 +84,7 @@ fabric.properties
 
 #Python Virtual Enviroments
 VENV/
+venv/
 
 #IDE
 .idea/
