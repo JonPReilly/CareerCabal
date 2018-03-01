@@ -38,6 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+
+    #3rd party applications
+    'cities',
+
+    #Custom applications
+    'apps.company',
+    'apps.job'
 ]
 
 MIDDLEWARE = [
