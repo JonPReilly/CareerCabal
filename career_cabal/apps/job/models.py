@@ -14,7 +14,6 @@ class Job(models.Model):
     experience = models.TextField(max_length=1000, null=True, blank=True)
     title = models.CharField(max_length=150, null=False, blank=False)
     url = models.URLField(unique=True)
-    valid_through = models.DateField(default=datetime.now() + timedelta(DEFAULT_DAYS_VALID))
     city = models.ForeignKey(City, on_delete=models.PROTECT)
 
     def __str__(self):
