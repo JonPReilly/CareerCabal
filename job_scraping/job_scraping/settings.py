@@ -13,6 +13,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 sys.path.append(os.path.join(BASE_DIR, '../../career_cabal/career_cabal'))
+sys.path.append(os.path.join(BASE_DIR, '../../career_cabal'))
+sys.path.append(os.path.join(BASE_DIR, '../..'))
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'career_cabal.settings'
 
