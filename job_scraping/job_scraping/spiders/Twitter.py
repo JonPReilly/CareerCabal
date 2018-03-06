@@ -1,6 +1,8 @@
 import scrapy
 from django.utils.html import strip_tags
 
+from apps.job.models import Job
+
 
 class TwitterSpider(scrapy.Spider):
     download_delay = 4
@@ -28,4 +30,9 @@ class TwitterSpider(scrapy.Spider):
         for job in response.css('li.job-search-item'):
             job_url = job.css('a::attr(href)').extract_first()
             if job_url is not None:
-                yield scrapy.Request(response.urljoin(job_url))
+                absolute_url = response.urljoin(job_url)
+                if Job.objects.filter(url=response.urljoin(job_url)).exists():
+                    self.logger.info("Ignoring <" + absolute_url + "> : Job with that URL already exists.")
+                else:
+                    self.logger.info("Scraping: <" + absolute_url + ">")
+                    yield scrapy.Request(absolute_url)
