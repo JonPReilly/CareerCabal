@@ -28,7 +28,7 @@ SPIDER_MODULES = ['job_scraping.spiders']
 NEWSPIDER_MODULE = 'job_scraping.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'job_scraping (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -41,7 +41,7 @@ ROBOTSTXT_OBEY = False
 # See also autothrottle settings and docs
 DOWNLOAD_DELAY = 10
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 2
+CONCURRENT_REQUESTS_PER_DOMAIN = 1
 
 DEPTH_LIMIT = 2
 # CONCURRENT_REQUESTS_PER_IP = 16
@@ -84,7 +84,7 @@ ITEM_PIPELINES = {
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
-AUTOTHROTTLE_ENABLED = True
+#AUTOTHROTTLE_ENABLED = True
 # The initial download delay
 # AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
