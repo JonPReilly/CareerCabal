@@ -8,7 +8,7 @@ from apps.job.models import Job
 from job_scraping.spiders.DynamicPageSpider import DynamicPageSpider
 
 
-class TwitterSpider(DynamicPageSpider):
+class AtlassianSpider(DynamicPageSpider):
     download_delay = 4
     name = 'Atlassian'
     start_urls = ['https://www.atlassian.com/company/careers/all-jobs']

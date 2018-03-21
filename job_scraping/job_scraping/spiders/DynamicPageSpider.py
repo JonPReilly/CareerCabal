@@ -19,6 +19,7 @@ class DynamicPageSpider(scrapy.Spider):
     def parse(self, response):
         self.driver.get(response.url)
         self.waitForJavascriptToLoad()
+        self.preparePage()
         page_content = self.pullContentFromPage()
         job_urls, jobs = self.scrape(page_content, response)
 
@@ -42,3 +43,6 @@ class DynamicPageSpider(scrapy.Spider):
     def scrape(self, page_content, response):
         self.driver.close()
         raise NotImplemented
+
+    def preparePage(self):
+        pass
