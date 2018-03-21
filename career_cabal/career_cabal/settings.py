@@ -44,7 +44,8 @@ INSTALLED_APPS = [
 
     #Custom applications
     'apps.company',
-    'apps.job'
+    'apps.job',
+    'apps.jobApplication'
 ]
 
 MIDDLEWARE = [

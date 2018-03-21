@@ -5,11 +5,12 @@ from selenium import webdriver
 
 from apps.job.models import Job
 
+
 class DynamicPageSpider(scrapy.Spider):
     name = "Abstract"
     download_delay = 7
     WAIT_JS_LOAD_SECONDS = 7
-    start_urls = ['http://splitstalker.com/']
+    start_urls = []
     selector = None
 
     def __init__(self):
@@ -31,7 +32,6 @@ class DynamicPageSpider(scrapy.Spider):
                 self.logger.info("Scraping: <" + url + ">")
                 yield scrapy.Request(url)
 
-
     def pullContentFromPage(self):
         page_content = self.driver.execute_script("return document.documentElement.innerHTML;")
         return page_content
@@ -40,4 +40,5 @@ class DynamicPageSpider(scrapy.Spider):
         time.sleep(self.WAIT_JS_LOAD_SECONDS)
 
     def scrape(self, page_content, response):
+        self.driver.close()
         raise NotImplemented
