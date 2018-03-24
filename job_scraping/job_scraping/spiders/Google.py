@@ -19,6 +19,10 @@ class GoogleSpider(DynamicPageSpider):
     base_url = "https://careers.google.com/jobs"
     initial = True
 
+    def __init__(self, search_query='', *args, **kwargs):
+        self.search_query = search_query
+        super(GoogleSpider,self).__init__(*args, **kwargs)
+
     def scrape(self, page_content, response):
         self.selector = Selector(text=page_content)
         job_links = self.selector.css('a[class="sr-title text"]::attr(href)').extract()
@@ -49,6 +53,8 @@ class GoogleSpider(DynamicPageSpider):
             time.sleep(1)
             self.driver.find_element(value="gjlftb").send_keys("\n")
             time.sleep(1)
-            self.driver.find_element(value="search-text-box").send_keys("engineer\n")
+            self.driver.find_element(value="search-text-box").clear()
+
+            self.driver.find_element(value="search-text-box").send_keys(self.search_query + "\n")
             self.waitForJavascriptToLoad()
         self.initial = False
