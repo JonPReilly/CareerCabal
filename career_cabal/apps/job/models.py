@@ -10,7 +10,7 @@ class Job(models.Model):
 
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
     date_posted = models.DateField(auto_now=True)
-    description = models.TextField(max_length=1000, null=True, blank=True)
+    description = models.TextField(max_length=2000, null=True, blank=True)
     experience = models.TextField(max_length=1000, null=True, blank=True)
     title = models.CharField(max_length=150, null=False, blank=False)
     url = models.URLField(unique=True)
