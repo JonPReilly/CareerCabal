@@ -21,7 +21,7 @@ class GoogleSpider(DynamicPageSpider):
 
     def __init__(self, search_query='', *args, **kwargs):
         self.search_query = search_query
-        super(GoogleSpider,self).__init__(*args, **kwargs)
+        super(GoogleSpider, self).__init__(*args, **kwargs)
 
     def scrape(self, page_content, response):
         self.selector = Selector(text=page_content)
