@@ -5,7 +5,7 @@ from django.utils.html import strip_tags
 from apps.job.models import Job
 
 
-class FacebookSpider(scrapy.Spider):
+class SlackSpider(scrapy.Spider):
     download_delay = 4
     name = 'Slack'
     start_urls = [
