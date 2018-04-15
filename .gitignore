@@ -88,8 +88,3 @@ venv/
 
 #IDE
 .idea/
-
-career_cabal/apps/*/migrations/*
-
-#NodeJS
-career_cabal/node_modules/
