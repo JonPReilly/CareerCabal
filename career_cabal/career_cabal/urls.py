@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls import url
+from django.contrib import admin
+from django.urls import path
+from django.views import generic
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', generic.TemplateView.as_view(template_name='index.html'))
 ]
