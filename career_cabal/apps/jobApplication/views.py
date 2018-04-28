@@ -6,11 +6,13 @@ from rest_framework import status
 class JobBoard(APIView):
     def get(self,request,format=None):
         lanes = {
-                    8 : 'Saved',
-                    1 : 'Applied',
-                    2 : 'Coding Challange',
-                    7 : 'Phone Interview',
-                    6 : 'Onsite Interview',
-                    5 : 'Offer'
+                    'main' : [
+                                {'id' : 8, 'description' : 'Saved'},
+                                {'id' : 1, 'description' : 'Applied'},
+                                {'id' : 2, 'description' : 'Coding Challange'},
+                                {'id' : 7, 'description' : 'Phone Interview'},
+                                {'id' : 6, 'description' : 'Onsite Interview'},
+                                {'id' : 5, 'description' : 'Offer'},
+                             ]
                 }
         return Response(lanes, status.HTTP_200_OK)
