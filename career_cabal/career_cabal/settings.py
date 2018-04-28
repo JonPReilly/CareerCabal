@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #3rd party applications
     'cities',
     'webpack_loader',
+    'rest_framework',
 
     #Custom applications
     'apps.company',
