@@ -22,8 +22,12 @@ from django.contrib import admin
 from django.urls import path
 from django.views import generic
 
+from apps.jobApplication import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', generic.TemplateView.as_view(template_name='index.html')),
-    url(r'^api-auth/', include('rest_framework.urls'))
+    url(r'^api-auth/', include('rest_framework.urls')),
+
+    url(r'^application/lanes',views.JobBoard.as_view())
 ]
