@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^$', generic.TemplateView.as_view(template_name='index.html')),
     url(r'^api-auth/', include('rest_framework.urls')),
 
-    url(r'^application/lanes',views.JobBoard.as_view())
+    url(r'^application/lanes',views.JobBoard.as_view()),
+    url(r'^application/applications',views.JobApplicationView.as_view())
 ]
