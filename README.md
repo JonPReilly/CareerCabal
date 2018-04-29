@@ -11,10 +11,11 @@ Career Cabal is a rewrite of [JobBard](https://github.com/JonPReilly/JobBard) (a
 ## Technologies used
 
  1. [Django](https://www.djangoproject.com/) - User system and datbase object CRUD.
- 2. [Node.js](https://nodejs.org/en/) - Front-end UI
- 3. [PostgreSQL](https://www.postgresql.org/) + [PostGIS](http://postgis.net/) - Relational database with spatial extension for queries like "search for jobs within 5 miles of Boston"
- 4. [Scrapy](https://scrapy.org/) - Scraping job applications
- 5. [Selenium](https://www.seleniumhq.org/) - Scraping job applications from systems that require rendering javascript
+ 2. [Django Rest Framework](https://www.django-rest-framework.org) - Connec5t Django/DB to React.js via REST API calls.
+ 3. [React.js](https://reactjs.org) - Front-end UI
+ 4. [PostgreSQL](https://www.postgresql.org/) + [PostGIS](http://postgis.net/) - Relational database with spatial extension for queries like "search for jobs within 5 miles of Boston"
+ 5. [Scrapy](https://scrapy.org/) - Scraping job applications
+ 6. [Selenium](https://www.seleniumhq.org/) - Scraping job applications from systems that require rendering javascript
 ## Installation and Running
 ### Installing
  1. Install backend dependencies
