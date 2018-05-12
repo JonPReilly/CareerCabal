@@ -14,7 +14,10 @@ class DynamicPageSpider(scrapy.Spider):
     selector = None
 
     def __init__(self):
-        self.driver = webdriver.Chrome('./../../webdrivers/chromedriver')
+
+        self.options = webdriver.ChromeOptions()
+        self.options.add_argument('headless')
+        self.driver = webdriver.Chrome('./../../webdrivers/chromedriver', options=self.options)
 
     def parse(self, response):
         self.driver.get(response.url)
